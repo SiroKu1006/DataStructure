@@ -8,7 +8,6 @@ using namespace std;
 int main(){
     string filename;
     ifstream inFile;
-    
     // while(true){
     //     cout << "Enter the filename:\n";
     //     // cin >> filename;
@@ -40,20 +39,20 @@ int main(){
         } 
     };
     auto end = chrono::high_resolution_clock::now();
-    auto time2D = chrono::duration_cast<chrono::milliseconds>(end - start).count();
+    auto time2D = chrono::duration_cast<chrono::microseconds>(end - start).count();
 
 
     start = chrono::high_resolution_clock::now();
     SparseMatrix B_Matrix = A_Matrix.Transpose();
     end = chrono::high_resolution_clock::now();
 
-    auto timeTran = chrono::duration_cast<chrono::milliseconds>(end - start).count();
+    auto timeTran = chrono::duration_cast<chrono::microseconds>(end - start).count();
     
     start = chrono::high_resolution_clock::now();
     SparseMatrix C_Matrix= A_Matrix.FastTranspose();
     
     end = chrono::high_resolution_clock::now();
-    auto timeFaTran = chrono::duration_cast<chrono::milliseconds>(end - start).count();
+    auto timeFaTran = chrono::duration_cast<chrono::microseconds>(end - start).count();
     cout << "Case 2-dimensional array :\n";
 
     for (int i = 0; i < m; i++){
@@ -66,11 +65,8 @@ int main(){
     B_Matrix.print();
     cout << "Case FastTranspose :\n";
     C_Matrix.print();
-    cout << " 2-dimensional array use " << time2D << "ms\n" ;
-    cout << "Transpose use " << timeTran << "ms\n" ;
-    cout << "FastTranspose use " << timeFaTran << "ms\n" ; 
+    cout << " 2-dimensional array use " << time2D/1000.0 << "ms\n" ;
+    cout << "Transpose use " << timeTran/1000.0 << "ms\n" ;
+    cout << "FastTranspose use " << timeFaTran/1000.0 << "ms\n" ; 
 };
-
-// cout << "(" << row << ", " << col << ", " << val << ")" << " becomes (" << col << ", " << row << ", " << val << ")" << "in the transpose\n";
-// (0, 0, 1) becomes (0, 0, 1) in the transpose
 
