@@ -9,8 +9,8 @@ using namespace std;
 
 class SparseMatrix {
     private:
-	    int rows, cols, terms;
-	    MatrixTerm *smArray;
+        int rows, cols, terms;
+        MatrixTerm *smArray;
     public:
         SparseMatrix(int r, int c, int t);
         SparseMatrix Transpose();

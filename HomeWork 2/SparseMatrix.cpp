@@ -12,14 +12,14 @@ SparseMatrix SparseMatrix::Transpose(){
     SparseMatrix b(rows, cols, terms);
     if (terms > 0){
         int currentB = 0;
-        for (int c = 0; c < cols; c++) // transpose by columns
-            for (int i = 0; i < terms; i++) // find and move terms in column c
+        for (int c = 0; c < cols; c++)
+            for (int i = 0; i < terms; i++)
                 if (smArray[i].col == c) {
                     b.smArray[currentB].row = c;
                     b.smArray[currentB].col = smArray[i].row;
                     b.smArray[currentB++].value = smArray[i].value;
                 }
-    } // end of if (terms > 0)
+    }
 
     return b;
     
@@ -58,8 +58,7 @@ void SparseMatrix::addTerm(int row,int col,int value,int i){
 }
 
 void SparseMatrix::print(){
-    for (int i = 0; i < terms; i++)
-    {
+    for (int i = 0; i < terms; i++){
         cout << smArray[i].row << " " << smArray[i].col << " " << smArray[i].value << "\n";
     }
     

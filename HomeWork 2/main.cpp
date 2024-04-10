@@ -6,8 +6,8 @@ using namespace std;
 
 
 int main(){
-    string filename;
-    ifstream inFile;
+    // string filename;
+    // ifstream inFile;
     // while(true){
     //     cout << "Enter the filename:\n";
     //     // cin >> filename;
