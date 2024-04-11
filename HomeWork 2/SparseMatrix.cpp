@@ -20,12 +20,9 @@ SparseMatrix SparseMatrix::Transpose(){
                     b.smArray[currentB++].value = smArray[i].value;
                 }
     }
-
     return b;
     
 }
-
-
 SparseMatrix SparseMatrix::FastTranspose(){
     SparseMatrix b(cols, rows, terms);
     if (terms>0){
