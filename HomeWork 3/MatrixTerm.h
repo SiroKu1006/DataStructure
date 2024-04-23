@@ -8,6 +8,7 @@ using namespace std;
 
 class MatrixTerm {
     friend class Stack;
+    friend class Maze;
     private:
         int row, col, value;
     public:

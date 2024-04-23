@@ -6,13 +6,13 @@
 #include <sstream>
 #include <cmath>
 #include <fstream>
-#include "MatrixTerm.cpp"
-#include "Stack.cpp"
+#include "MatrixTerm.h"
+#include "Stack.h"
 using namespace std;
 
 class Maze{
     private:
-        int row,col,term;
+        int row,col,term,index;
         MatrixTerm *matrix;
         Stack *walked;
     public:

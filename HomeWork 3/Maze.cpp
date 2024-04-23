@@ -6,8 +6,13 @@ Maze::Maze(int r,int c ,int t){
     term = t;
     matrix = new MatrixTerm[t];
     walked = new Stack[t];
+    index = 0;
 }
 
-Maze::setCase(int c,int r ,char v){
-    
+void Maze::setCase(int c,int r ,char v){
+    matrix[index].row = r;
+    matrix[index].col = c;
+    matrix[index].value = v;
+    index++;
 }
+
