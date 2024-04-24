@@ -9,16 +9,17 @@
 #include "MatrixTerm.h"
 using namespace std;
 
+template <class T>
 class Stack{
     private:
-        int max_size = 128;
+        int max_size;
         int top;
-        MatrixTerm *ar;
+        T* ar;
     public:
         Stack(int size);
-        Stack():max_size(max_size),top(top),ar(ar){};
-        void push(MatrixTerm val);
-        MatrixTerm pop();
+        bool isEmpty();
+        void pop();
+        T pop();
 };
 
 #endif

@@ -5,3 +5,5 @@ build
 mid_exam
 test
 *.pdf
+hw3exp.cpp
+.gitignore
