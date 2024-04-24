@@ -162,6 +162,7 @@ int main(){
     maze[ed_r][ed_c] = '0';
     // cout <<  "st:" << st_r << " " << st_c << "\n" <<  "ed:" << ed_r << " " << ed_c << "\n";
     char ck[] = {'-','\\','|','/'};
+    int step = 0;
     if (DFS(maze,row,col,st_r,st_c,ed_r,ed_c)){
         maze[st_r][st_c] = 's';
         maze[ed_r][ed_c] = 'e';
@@ -171,6 +172,7 @@ int main(){
                 if(find(ck,ck+4,maze[i+1][j+1]) != ck+4){
 
                     cout << maze[i+1][j+1] << " ";
+                    step++;
                 }
                 else{
                     cout << old_maze[i+1][j+1]<< " ";
@@ -178,6 +180,7 @@ int main(){
             }
             cout << "\n";
         }
+        cout << "Total "<<step<< " Steps.\n";
     }
     // cout << "Done\n";
     
