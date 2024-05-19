@@ -6,40 +6,19 @@ using namespace std;
 
 DoubleLinkedList<BCD64> input(string in_){
     DoubleLinkedList<BCD64> list;
-    // 將數字分割成多個16位的部分
     while (in_.size() > 16) {
         string part = in_.substr(in_.size() - 16);
         in_ = in_.substr(0, in_.size() - 16);
 
-        // 將每個部分存儲在一個BCD64物件中
         BCD64 num(part);
-
-        // 將BCD64物件添加到鏈表中
         list.addBack(num);
     }
-
-    // 處理剩餘的部分
     if (!in_.empty()) {
         BCD64 num(in_);
         list.addBack(num);
     }
     return list;
 };
-
-// DoubleLinkedList<BCD64> adder(DoubleLinkedList<BCD64> num1, DoubleLinkedList<BCD64> num2){
-//     DoubleLinkedList<BCD64> result;
-//     Node<BCD64>* current1 = num1.getFirst();
-//     Node<BCD64>* current2 = num2.getFirst();
-//     unsigned char carry = 0;
-//     while (current1 != nullptr && current2 != nullptr) {
-//         BCD64 sum = current1->getData().add(current2->getData(), &carry);
-//         result.addBack(sum);
-//         current1 = current1->getNext();
-//         current2 = current2->getNext();
-//     }
-//     result.Print();
-//     return result;
-// }
 
 DoubleLinkedList<BCD64> adder(DoubleLinkedList<BCD64> num1, DoubleLinkedList<BCD64> num2){
     DoubleLinkedList<BCD64> result;
