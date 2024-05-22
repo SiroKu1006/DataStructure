@@ -30,16 +30,17 @@ public:
     void Print() {
         Node<T>* current = first;
         while (current != nullptr) {
-            cout << current->getData() << " ";
+            cout << current->getData();
             current = current->getNext();
         }
         cout << "\n";
     }
     Node<T>* getFirst() const { return first; }
+    Node<T>* getLast() const { return last; } 
     void PrintReverse() {
         Node<T>* current = last;
         while (current != nullptr) {
-            cout << current->getData() << " ";
+            cout << current->getData();
             current = current->getPrev();
         }
         cout << "\n";

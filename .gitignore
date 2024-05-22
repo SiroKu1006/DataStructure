@@ -2,6 +2,7 @@
 build
 *.zip
 *.exe
+*.rar
 mid_exam
 test
 *.pdf
