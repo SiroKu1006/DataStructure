@@ -8,3 +8,4 @@ test
 *.pdf
 hw3exp.cpp
 .gitignore
+*.docx
